@@ -81,14 +81,12 @@ namespace MediaBrowser.MediaEncoding.Probing
             if (videoStreams.Any() && !videoStreams.Where(i => i.IsDefault).Any())
             {
                 videoStreams.First().IsDefault = true;
-                _logger.LogInformation("Set first video stream to default");
             }
 
             var audioStreams = info.MediaStreams.Where(i => i.Type == MediaStreamType.Audio).ToList();
             if (audioStreams.Any() && !audioStreams.Where(i => i.IsDefault).Any())
             {
                 audioStreams.First().IsDefault = true;
-                _logger.LogInformation("Set first audio stream to default");
             }
 
             info.MediaAttachments = internalStreams.Select(GetMediaAttachment)

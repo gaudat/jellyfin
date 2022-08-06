@@ -1879,7 +1879,7 @@ namespace MediaBrowser.Controller.MediaEncoding
                 && !(videoStream.IsAVC ?? false))
             {
                 // see Coach S01E01 - Kelly and the Professor(0).avi
-                return false;
+                //return false;
             }
 
             return true;
